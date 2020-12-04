@@ -15,7 +15,7 @@ public class NameController {
         // validating month on exist
         Month userMont = getMonth(month);
         if (userMont == null) {
-            return "wrong mont " + month;
+            return "wrong month " + month;
         }
         return nameGenerator.generate(day, userMont);
     }
@@ -30,14 +30,8 @@ public class NameController {
     }
 
     private boolean validateDay(int day) {
-        if (day < 31 && day > 0) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return day < 32 && day > 0;
     }
-
 }
 
 
